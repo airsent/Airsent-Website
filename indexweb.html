@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>AIRSENT — Precision Autonomous Landing</title>
+  <meta name="description" content="Airsent builds autonomous drone delivery infrastructure: drones, precision landing bases, and ground control software for campuses and urban delivery networks."/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Airsent"/>
+  <link rel="canonical" href="https://airsent.tech/"/>
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://airsent.tech/"/>
+  <meta property="og:site_name" content="Airsent"/>
+  <meta property="og:title" content="AIRSENT — Precision Autonomous Landing"/>
+  <meta property="og:description" content="Airsent builds autonomous drone delivery infrastructure: drones, precision landing bases, and ground control software for campuses and urban delivery networks."/>
+  <meta property="og:image" content="https://airsent.tech/weblogo.png"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:url" content="https://airsent.tech/"/>
+  <meta name="twitter:title" content="AIRSENT — Precision Autonomous Landing"/>
+  <meta name="twitter:description" content="Airsent builds autonomous drone delivery infrastructure: drones, precision landing bases, and ground control software for campuses and urban delivery networks."/>
+  <meta name="twitter:image" content="https://airsent.tech/weblogo.png"/>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Airsent",
+    "url": "https://airsent.tech/",
+    "description": "Autonomous drone delivery infrastructure with drones, precision landing bases, and ground control software for campuses and urban delivery networks.",
+    "logo": "https://airsent.tech/weblogo.png",
+    "email": "team@airsent.tech"
+  }
+  </script>
+  <link rel="icon" type="image/png" href="thumblogo.png"/>
+  <meta name="theme-color" content="#05050f"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="stylesweb.css"/>
+</head>
+<body>
+<div class="scanlines"></div>
+<div class="noise"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#hero"><img src="weblogo.png" alt="AIRSENT" class="brand-logo"/></a>
+    <div class="nav-links">
+      <a href="#what"><span class="nav-num">01</span>What We Build</a>
+      <a href="#usecase"><span class="nav-num">02</span>Use Cases</a>
+      <a href="#vision"><span class="nav-num">03</span>Vision</a>
+      <a href="#gcs"><span class="nav-num">04</span>GCS Software</a>
+      <a href="#contact"><span class="nav-num">05</span>Contact</a>
+    </div>
+    <a class="nav-cta" href="#contact"><span class="cta-dot"></span>REACH OUT</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-line"></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#what"><span class="mm-num">01</span>What We Build</a>
+  <a href="#usecase"><span class="mm-num">02</span>Use Cases</a>
+  <a href="#vision"><span class="mm-num">03</span>Vision</a>
+  <a href="#gcs"><span class="mm-num">04</span>GCS Software</a>
+  <a href="#contact"><span class="mm-num">05</span>Contact</a>
+  <a href="#contact" class="mm-cta">REACH OUT</a>
+</div>
+
+<section id="hero">
+  <div class="hero-sticky">
+    <div class="hero-bg">
+      <canvas id="particleCanvas"></canvas>
+      <div class="hero-grid"></div>
+      <div class="hero-glow-left"></div>
+      <div class="hero-glow-right"></div>
+    </div>
+
+    <!-- 3D viz — centered, full viewport -->
+    <div class="hero-viz-center" id="heroVizCenter">
+      <div class="viz-frame">
+        <div class="viz-scene" id="vizScene"></div>
+      </div>
+    </div>
+
+    <!-- Apple-style scroll-driven text overlay -->
+    <div class="hero-text-overlay" id="heroOverlay">
+      <div class="hero-overlay-inner">
+        <h1 class="hero-title">
+          <span class="title-line title-line-1">AUTONOMOUS DRONE DELIVERY.</span>
+          <span class="title-line title-line-2 accent-line">BUILT AROUND INFRASTRUCTURE.</span>
+        </h1>
+        <p class="hero-sub">Airsent combines autonomous drones, smart delivery towers, and precision landing technology into a complete delivery infrastructure platform for campuses and urban environments.</p>
+        <div class="hero-actions">
+          <a href="#usecase" class="btn-primary"><span class="btn-bg"></span><span class="btn-text">USE CASES</span><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></a>
+          <a href="#contact" class="btn-ghost"><span class="btn-text">GET IN TOUCH</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" id="heroScrollHint"><div class="scroll-line"></div><span>SCROLL</span></div>
+  </div>
+</section>
+
+<section id="what" class="section">
+  <div class="container">
+    <div class="split-layout">
+      <div class="what-copy reveal">
+        <div class="section-label"><span class="sl-num">01</span><span class="sl-line"></span><span>WHAT WE BUILD</span></div>
+        <h2>Drone food delivery, <em>end to end</em></h2>
+        <p class="section-body">Airsent is building drone food delivery from the ground up — our own drones, our own landing bases, our own software. Everything designed together so it actually works.</p>
+        <div class="usp-stack">
+          <div class="usp-item"><span class="usp-num">01</span><div class="usp-content"><h3>Our Drones, Our Bases</h3><p>We design and build the drones and the landing bases ourselves — purpose-built to work together perfectly.</p></div><span class="usp-arrow">→</span></div>
+          <div class="usp-item"><span class="usp-num">02</span><div class="usp-content"><h3>Built End to End</h3><p>Airsent designs and builds everything — the drone, the base, and the software. One system, fully owned, fully optimized.</p></div><span class="usp-arrow">→</span></div>
+          <div class="usp-item"><span class="usp-num">03</span><div class="usp-content"><h3>Precise Every Time</h3><p>Our system guides drones to a safe, accurate landing on every single delivery — in any weather, any time of day.</p></div><span class="usp-arrow">→</span></div>
+          <div class="usp-item"><span class="usp-num">04</span><div class="usp-content"><h3>Place It Anywhere</h3><p>Sidewalks, rooftops, parking lots, restaurant fronts. Wherever your customers are, Airsent can deliver there.</p></div><span class="usp-arrow">→</span></div>
+        </div>
+      </div>
+      <div class="pickup-viz reveal">
+        <div class="pickup-scene" id="pickupScene"></div>
+        <button class="replay-btn replay-btn-pickup" id="pickupReplay" type="button" aria-label="Replay pickup animation">REPLAY</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="usecase" class="section section-dark">
+  <div class="container">
+    <div class="delivery-map reveal" aria-label="Airsent drones fly direct while traditional delivery follows slower road turns">
+      <div class="map-copy">
+        <span class="map-kicker">ROUTE COMPARISON</span>
+        <h3>Drone delivery goes direct.</h3>
+        <p>Cars have to stay on roads and turn around buildings. Airsent drones fly over the map on a direct route, so the drone reaches the destination first.</p>
+      </div>
+      <div class="map-stage">
+        <!-- City map SVG — car follows roads, drone flies direct -->
+        <svg class="city-map-svg" viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="glowStrong" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="7" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+              <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="rgba(0,0,0,0.5)"/>
+            </filter>
+            <path id="carRoutePath" d="M112 390 L112 340 L180 340 L180 260 L290 260 L290 310 L420 310 L420 200 L560 200 L560 150 L700 150 L700 100 L790 100"/>
+            <path id="droneRoutePath" d="M112 370 L790 90"/>
+          </defs>
+
+          <rect width="900" height="480" fill="#071426"/>
+
+          <rect x="0" y="340" width="900" height="32" fill="#0f243b"/>
+          <line x1="0" y1="356" x2="900" y2="356" stroke="rgba(120,170,230,0.46)" stroke-width="1.5" stroke-dasharray="24 16" opacity="0.7"/>
+          <line x1="0" y1="349" x2="900" y2="349" stroke="white" stroke-width="0.7" stroke-dasharray="18 20" opacity="0.25"/>
+
+          <rect x="160" y="250" width="740" height="32" fill="#0f243b"/>
+          <line x1="160" y1="266" x2="900" y2="266" stroke="rgba(120,170,230,0.46)" stroke-width="1.5" stroke-dasharray="24 16" opacity="0.7"/>
+          <line x1="160" y1="259" x2="900" y2="259" stroke="white" stroke-width="0.7" stroke-dasharray="18 20" opacity="0.25"/>
+
+          <rect x="160" y="140" width="740" height="32" fill="#0f243b"/>
+          <line x1="160" y1="156" x2="900" y2="156" stroke="rgba(120,170,230,0.46)" stroke-width="1.5" stroke-dasharray="24 16" opacity="0.7"/>
+          <line x1="160" y1="149" x2="900" y2="149" stroke="white" stroke-width="0.7" stroke-dasharray="18 20" opacity="0.25"/>
+
+          <rect x="160" y="0" width="32" height="342" fill="#0f243b"/>
+          <line x1="176" y1="0" x2="176" y2="342" stroke="rgba(120,170,230,0.46)" stroke-width="1.5" stroke-dasharray="24 16" opacity="0.7"/>
+
+          <rect x="280" y="252" width="32" height="90" fill="#0f243b"/>
+          <line x1="296" y1="252" x2="296" y2="342" stroke="rgba(120,170,230,0.46)" stroke-width="1.5" stroke-dasharray="24 16" opacity="0.7"/>
+
+          <rect x="420" y="142" width="32" height="110" fill="#0f243b"/>
+          <line x1="436" y1="142" x2="436" y2="252" stroke="rgba(120,170,230,0.46)" stroke-width="1.5" stroke-dasharray="24 16" opacity="0.7"/>
+
+          <rect x="550" y="0" width="32" height="252" fill="#0f243b"/>
+          <line x1="566" y1="0" x2="566" y2="252" stroke="rgba(120,170,230,0.46)" stroke-width="1.5" stroke-dasharray="24 16" opacity="0.7"/>
+
+          <rect x="690" y="0" width="32" height="252" fill="#0f243b"/>
+          <line x1="706" y1="0" x2="706" y2="252" stroke="rgba(120,170,230,0.46)" stroke-width="1.5" stroke-dasharray="24 16" opacity="0.7"/>
+
+          <g class="restaurant-marker">
+            <rect x="8" y="282" width="134" height="56" rx="4" filter="url(#softShadow)"/>
+            <rect x="24" y="268" width="102" height="16" rx="3"/>
+            <text x="75" y="279" text-anchor="middle" font-family="monospace" font-size="8.5" font-weight="bold">RESTAURANT</text>
+            <path d="M12 304 H138"/>
+            <path d="M12 304 H138 V311 H12 Z"/>
+            <path d="M21 304 V311 M39 304 V311 M57 304 V311 M75 304 V311 M93 304 V311 M111 304 V311 M129 304 V311"/>
+            <rect x="24" y="290" width="18" height="13" rx="2"/>
+            <rect x="52" y="290" width="18" height="13" rx="2"/>
+            <rect x="80" y="290" width="18" height="13" rx="2"/>
+            <rect x="108" y="290" width="18" height="13" rx="2"/>
+            <rect x="66" y="311" width="20" height="27" rx="3"/>
+            <path d="M8 338 H142"/>
+            <circle cx="75" cy="255" r="12" filter="url(#glow)"/>
+            <text x="75" y="260" text-anchor="middle" font-family="monospace" font-size="9" font-weight="bold">R</text>
+          </g>
+
+          <g class="landing-base">
+            <rect x="777" y="17" width="92" height="86" rx="12" filter="url(#softShadow)"/>
+            <rect class="landing-top-label" x="773" y="0" width="100" height="16" rx="4"/>
+            <text class="landing-top-label-text" x="823" y="11.5" text-anchor="middle" font-family="monospace" font-size="6.6" font-weight="bold">AIRSENT</text>
+            <circle cx="823" cy="58" r="26"/>
+            <circle cx="823" cy="58" r="16"/>
+            <circle cx="823" cy="58" r="5"/>
+            <path d="M823 31 V43 M823 73 V85 M796 58 H811 M835 58 H850"/>
+            <path d="M799 90 H847 M807 84 H839 M815 78 H831"/>
+            <rect x="811" y="84" width="24" height="6" rx="2"/>
+            <circle cx="803" cy="34" r="3"/>
+            <circle cx="843" cy="34" r="3"/>
+          </g>
+          <g class="landing-bottom-label">
+            <rect x="786" y="108" width="74" height="13" rx="3"/>
+            <text x="823" y="118" text-anchor="middle" font-family="monospace" font-size="6.3" font-weight="bold">LANDING TOWER</text>
+          </g>
+
+          <rect x="200" y="175" width="72" height="70" fill="#4455a8" rx="2" filter="url(#softShadow)"/>
+          <rect x="200" y="175" width="72" height="6" fill="#aab7ff" rx="1"/>
+          <g fill="#dbe6ff" opacity="0.72">
+            <rect x="206" y="185" width="8" height="6" rx="1"/><rect x="218" y="185" width="8" height="6" rx="1"/><rect x="230" y="185" width="8" height="6" rx="1"/><rect x="242" y="185" width="8" height="6" rx="1"/><rect x="254" y="185" width="8" height="6" rx="1"/>
+            <rect x="206" y="196" width="8" height="6" rx="1"/><rect x="218" y="196" width="8" height="6" rx="1"/><rect x="230" y="196" width="8" height="6" rx="1"/><rect x="242" y="196" width="8" height="6" rx="1"/><rect x="254" y="196" width="8" height="6" rx="1"/>
+            <rect x="206" y="207" width="8" height="6" rx="1"/><rect x="218" y="207" width="8" height="6" rx="1"/><rect x="230" y="207" width="8" height="6" rx="1"/><rect x="242" y="207" width="8" height="6" rx="1"/><rect x="254" y="207" width="8" height="6" rx="1"/>
+            <rect x="206" y="218" width="8" height="6" rx="1"/><rect x="218" y="218" width="8" height="6" rx="1"/><rect x="230" y="218" width="8" height="6" rx="1"/><rect x="242" y="218" width="8" height="6" rx="1"/><rect x="254" y="218" width="8" height="6" rx="1"/>
+            <rect x="206" y="229" width="8" height="6" rx="1"/><rect x="218" y="229" width="8" height="6" rx="1"/><rect x="230" y="229" width="8" height="6" rx="1"/><rect x="242" y="229" width="8" height="6" rx="1"/>
+          </g>
+          <rect x="340" y="60" width="80" height="75" fill="#4455a8" rx="2" filter="url(#softShadow)"/>
+          <rect x="340" y="60" width="80" height="5" fill="#aab7ff" rx="1"/>
+          <g fill="#dbe6ff" opacity="0.72">
+            <rect x="347" y="70" width="10" height="8" rx="1"/><rect x="362" y="70" width="10" height="8" rx="1"/><rect x="377" y="70" width="10" height="8" rx="1"/><rect x="392" y="70" width="10" height="8" rx="1"/>
+            <rect x="347" y="83" width="10" height="8" rx="1"/><rect x="362" y="83" width="10" height="8" rx="1"/><rect x="377" y="83" width="10" height="8" rx="1"/><rect x="392" y="83" width="10" height="8" rx="1"/>
+            <rect x="347" y="96" width="10" height="8" rx="1"/><rect x="362" y="96" width="10" height="8" rx="1"/><rect x="377" y="96" width="10" height="8" rx="1"/><rect x="392" y="96" width="10" height="8" rx="1"/>
+            <rect x="347" y="109" width="10" height="8" rx="1"/><rect x="362" y="109" width="10" height="8" rx="1"/><rect x="377" y="109" width="10" height="8" rx="1"/><rect x="392" y="109" width="10" height="8" rx="1"/>
+          </g>
+          <rect x="460" y="275" width="70" height="60" fill="#4455a8" rx="2" filter="url(#softShadow)"/>
+          <rect x="460" y="275" width="70" height="5" fill="#aab7ff" rx="1"/>
+          <g fill="#dbe6ff" opacity="0.72">
+            <rect x="466" y="284" width="9" height="7" rx="1"/><rect x="479" y="284" width="9" height="7" rx="1"/><rect x="492" y="284" width="9" height="7" rx="1"/><rect x="505" y="284" width="9" height="7" rx="1"/>
+            <rect x="466" y="296" width="9" height="7" rx="1"/><rect x="479" y="296" width="9" height="7" rx="1"/><rect x="492" y="296" width="9" height="7" rx="1"/><rect x="505" y="296" width="9" height="7" rx="1"/>
+            <rect x="466" y="308" width="9" height="7" rx="1"/><rect x="479" y="308" width="9" height="7" rx="1"/><rect x="492" y="308" width="9" height="7" rx="1"/>
+          </g>
+          <rect x="600" y="65" width="60" height="90" fill="#4455a8" rx="2" filter="url(#softShadow)"/>
+          <rect x="600" y="65" width="60" height="5" fill="#aab7ff" rx="1"/>
+          <g fill="#dbe6ff" opacity="0.72">
+            <rect x="606" y="75" width="8" height="7" rx="1"/><rect x="618" y="75" width="8" height="7" rx="1"/><rect x="630" y="75" width="8" height="7" rx="1"/><rect x="642" y="75" width="8" height="7" rx="1"/>
+            <rect x="606" y="87" width="8" height="7" rx="1"/><rect x="618" y="87" width="8" height="7" rx="1"/><rect x="630" y="87" width="8" height="7" rx="1"/><rect x="642" y="87" width="8" height="7" rx="1"/>
+            <rect x="606" y="99" width="8" height="7" rx="1"/><rect x="618" y="99" width="8" height="7" rx="1"/><rect x="630" y="99" width="8" height="7" rx="1"/><rect x="642" y="99" width="8" height="7" rx="1"/>
+            <rect x="606" y="111" width="8" height="7" rx="1"/><rect x="618" y="111" width="8" height="7" rx="1"/><rect x="630" y="111" width="8" height="7" rx="1"/>
+            <rect x="606" y="123" width="8" height="7" rx="1"/><rect x="618" y="123" width="8" height="7" rx="1"/>
+          </g>
+
+          <polyline class="car-route-glow" points="112,356 160,356 160,266 192,266 192,156 420,156 452,156 452,266 550,266 550,156 815,156"
+            fill="none" stroke="rgba(255,60,80,0.3)" stroke-width="20" stroke-linejoin="round"/>
+          <polyline class="car-route-line" points="112,356 160,356 160,266 192,266 192,156 420,156 452,156 452,266 550,266 550,156 815,156"
+            fill="none" stroke="#ff3c50" stroke-width="3" stroke-dasharray="12 10" stroke-linejoin="round" opacity="0.8"/>
+
+          <line class="drone-route-glow" x1="112" y1="290" x2="815" y2="57" stroke="rgba(60,255,116,0.15)" stroke-width="16"/>
+          <line class="drone-route-line" x1="112" y1="290" x2="815" y2="57" stroke="#3cff74" stroke-width="2.5" stroke-dasharray="8 14" opacity="0.9" filter="url(#glowStrong)"/>
+
+          <g class="car-map-token" filter="url(#glow)">
+            <animateMotion id="carMotion" begin="indefinite" dur="32s" repeatCount="indefinite" rotate="auto"
+              calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.92;1"
+              path="M112,356 L160,356 L160,266 L192,266 L192,156 L420,156 L452,156 L452,266 L550,266 L550,156 L815,156"/>
+            <g transform="scale(0.72)">
+              <path d="M-27 4 C-27 -5 -20 -10 -10 -10 H3 C12 -10 18 -4 24 3 L31 5 C34 6 36 9 36 13 V18 H-34 V12 C-34 8 -32 5 -27 4Z" fill="#f43f5e"/>
+              <path d="M-11 -8 H2 C9 -8 14 -4 18 2 H-12 Z" fill="#dff7ff" opacity="0.92"/>
+              <path d="M-28 7 H30 C33 7 35 10 35 14 H-34 C-34 10 -32 8 -28 7Z" fill="#fb7185"/>
+              <rect x="-2" y="-7" width="2.5" height="10" fill="#be123c" opacity="0.75"/>
+              <rect x="28" y="8" width="5" height="4" rx="1" fill="#fff7b0"/>
+              <rect x="-34" y="10" width="5" height="4" rx="1" fill="#fecdd3"/>
+              <rect x="-18" y="17" width="34" height="4" rx="1.5" fill="#3f3f46"/>
+              <circle cx="-18" cy="19" r="8" fill="#05070c"/>
+              <circle cx="-18" cy="19" r="4.5" fill="#a1a1aa"/>
+              <circle cx="20" cy="19" r="8" fill="#05070c"/>
+              <circle cx="20" cy="19" r="4.5" fill="#a1a1aa"/>
+            </g>
+          </g>
+
+          <g class="drone-map-token" filter="url(#glowStrong)">
+            <animateMotion id="droneMotion" begin="indefinite" dur="32s" repeatCount="indefinite" rotate="auto"
+              calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.28;1"
+              path="M112,290 L815,57"/>
+            <rect x="-9" y="-5" width="18" height="10" rx="3" fill="#3cff74"/>
+            <line x1="-18" y1="-12" x2="0" y2="0" stroke="#28b95a" stroke-width="3" stroke-linecap="round"/>
+            <line x1="18" y1="-12" x2="0" y2="0" stroke="#28b95a" stroke-width="3" stroke-linecap="round"/>
+            <line x1="-18" y1="12" x2="0" y2="0" stroke="#28b95a" stroke-width="3" stroke-linecap="round"/>
+            <line x1="18" y1="12" x2="0" y2="0" stroke="#28b95a" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="-18" cy="-12" r="7" fill="none" stroke="#3cff74" stroke-width="1.5" opacity="0.7"/>
+            <circle cx="18" cy="-12" r="7" fill="none" stroke="#3cff74" stroke-width="1.5" opacity="0.7"/>
+            <circle cx="-18" cy="12" r="7" fill="none" stroke="#3cff74" stroke-width="1.5" opacity="0.7"/>
+            <circle cx="18" cy="12" r="7" fill="none" stroke="#3cff74" stroke-width="1.5" opacity="0.7"/>
+            <circle cx="0" cy="0" r="3" fill="#3cff74" opacity="0.9"/>
+          </g>
+
+          <rect x="14" y="447" width="130" height="26" fill="rgba(8,9,22,0.82)" rx="4" stroke="rgba(255,60,80,0.5)" stroke-width="1"/>
+          <line class="car-route-line" x1="22" y1="460" x2="46" y2="460" stroke="#ff3c50" stroke-width="2.5" stroke-dasharray="6 5"/>
+          <text class="car-route-label" x="52" y="464" font-family="monospace" font-size="8" fill="#ff7088" font-weight="bold">CAR  25-40 MIN <tspan font-size="6" opacity="0.72">APPROX*</tspan></text>
+          <rect x="154" y="447" width="150" height="26" fill="rgba(8,9,22,0.82)" rx="4" stroke="rgba(60,255,116,0.5)" stroke-width="1"/>
+          <line class="drone-route-line" x1="162" y1="460" x2="186" y2="460" stroke="#3cff74" stroke-width="2.5" stroke-dasharray="5 8"/>
+          <text class="drone-route-label" x="192" y="464" font-family="monospace" font-size="8" fill="#3cff74" font-weight="bold">DRONE  10-15 MIN <tspan font-size="6" opacity="0.72">APPROX*</tspan></text>
+        </svg>
+
+        <button class="replay-btn replay-btn-map" id="routeReplay" type="button" aria-label="Replay route animation">REPLAY</button>
+
+        <div class="map-stats">
+          <div><span>TRADITIONAL</span><strong>25-40 MIN <sup>APPROX*</sup></strong><em>street turns + traffic</em></div>
+          <div><span>AIRSENT</span><strong>10-15 MIN <sup>APPROX*</sup></strong><em>direct aerial route</em></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-label reveal"><span class="sl-num">02</span><span class="sl-line"></span><span>USE CASES</span></div>
+    <div class="section-title reveal">Where <em>Airsent</em> makes drone delivery possible</div>
+    <div class="app-grid">
+      <div class="app-card reveal"><div class="app-card-num">01</div><h4>Food &amp; Retail Delivery</h4><p>Place an Airsent base outside your business or in a shared hub. Drones land, drop off, and go. Customers get their orders fast.</p></div>
+      <div class="app-card reveal"><div class="app-card-num">02</div><h4>Medical &amp; Emergency</h4><p>Get critical supplies — medication, blood, equipment — to hospitals and remote locations faster and more reliably than ground transport.</p></div>
+      <div class="app-card reveal"><div class="app-card-num">03</div><h4>Campus &amp; Enterprise</h4><p>Universities, corporate campuses, and industrial sites can run their own drone delivery network with Airsent bases as the backbone.</p></div>
+      <div class="app-card reveal"><div class="app-card-num">04</div><h4>Last-Mile Networks</h4><p>Logistics operators can deploy a network of Airsent bases to create reliable last-mile drone delivery infrastructure in any city.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="vision" class="section">
+  <div class="container">
+    <div class="section-label reveal"><span class="sl-num">03</span><span class="sl-line"></span><span>OUR VISION</span></div>
+    <div class="roadmap-track reveal">
+      <div class="rt-line"></div>
+      <div class="milestone active"><div class="ms-dot active-dot"></div><div class="ms-phase">NOW</div><h4>Building the Base</h4><p>Developing and testing our autonomous landing base and guidance system with drone operators and delivery partners.</p></div>
+      <div class="milestone"><div class="ms-dot"></div><div class="ms-phase">NEXT</div><h4>First Deployments</h4><p>Getting Airsent bases into the real world — working with early partners to prove out the full delivery loop end to end.</p></div>
+      <div class="milestone"><div class="ms-dot"></div><div class="ms-phase">FUTURE</div><h4>The Network</h4><p>A connected network of Airsent bases that any drone operator can plug into — the landing infrastructure for the drone delivery era.</p></div>
+    </div>
+  </div>
+</section>
+<section id="gcs" class="section section-dark">
+  <div class="container">
+
+    <div class="section-label reveal">
+      <span class="sl-num">04</span>
+      <span class="sl-line"></span>
+      <span>GROUND CONTROL SOFTWARE</span>
+    </div>
+
+    <div class="section-title reveal">
+      Airsent <em>Ground Control Software</em>
+    </div>
+
+    <p class="section-body reveal gcs-lead">
+      Airsent's custom Ground Control Station gives operators complete visibility
+      from pre-flight through touchdown. Every screen is designed around safe,
+      autonomous drone delivery and precision landing operations.
+    </p>
+
+    <div class="gcs-wrap reveal">
+
+      <div class="gcs-sidebar">
+
+        <button class="gcs-tab active"
+          data-img="image1.png"
+          data-title="Dashboard"
+          data-desc="Live telemetry, mission tracking, map view, battery status, motor outputs and real-time flight monitoring."
+          data-alt="Airsent dashboard screen showing telemetry, map tracking, motor outputs, and sensor status.">
+          <span>01</span>Dashboard
+        </button>
+
+        <button class="gcs-tab"
+          data-img="image2.png"
+          data-title="Mission Planner"
+          data-desc="Create missions, define waypoints and manage autonomous flight paths before launch."
+          data-alt="Airsent mission planner screen showing waypoint creation and autonomous route controls.">
+          <span>02</span>Mission Planner
+        </button>
+
+        <button class="gcs-tab"
+          data-img="image3.png"
+          data-title="System Health"
+          data-desc="Monitor vehicle status, subsystem performance and overall mission readiness."
+          data-alt="Airsent system health screen showing connected drone subsystems and live telemetry.">
+          <span>03</span>System Health
+        </button>
+
+        <button class="gcs-tab"
+          data-img="image4.png"
+          data-title="Sensor Status"
+          data-desc="View GPS, LiDAR, optical flow, compass and sensor diagnostics in real time."
+          data-alt="Airsent sensor status screen showing GPS, IMU, barometer, LiDAR, and launch readiness.">
+          <span>04</span>Sensor Status
+        </button>
+
+        <button class="gcs-tab"
+          data-img="image5.png"
+          data-title="Actuators"
+          data-desc="Monitor motor outputs, ESC health, PWM values and propulsion diagnostics."
+          data-alt="Airsent actuator screen showing quad motor outputs, PWM trends, and diagnostics.">
+          <span>05</span>Actuators
+        </button>
+
+        <button class="gcs-tab"
+          data-img="image6.png"
+          data-title="Pre-Flight"
+          data-desc="Run automated safety checks and verify all systems before takeoff."
+          data-alt="Airsent pre-flight checklist screen showing vehicle, navigation, and safety checks.">
+          <span>06</span>Pre-Flight
+        </button>
+
+        <button class="gcs-tab"
+          data-img="image7.png"
+          data-title="Launch Sequencer"
+          data-desc="Manage autonomous launch procedures and monitor execution."
+          data-alt="Airsent launch sequencer screen showing countdown, launch checks, and vehicle telemetry.">
+          <span>07</span>Launch Sequencer
+        </button>
+
+        <button class="gcs-tab"
+          data-img="image8.png"
+          data-title="Flight Logs"
+          data-desc="Review historical missions, telemetry and system events."
+          data-alt="Airsent flight logs screen showing recorded telemetry charts and AI fault analysis.">
+          <span>08</span>Flight Logs
+        </button>
+
+      </div>
+      <div class="gcs-scroll-indicator" aria-hidden="true"><span></span></div>
+
+      <div class="gcs-main">
+
+        <div class="gcs-image-wrap">
+          <img id="gcsImage" src="image1.png" alt="Airsent dashboard screen showing telemetry, map tracking, motor outputs, and sensor status.">
+        </div>
+
+        <div class="gcs-info">
+          <div class="gcs-pill">GROUND CONTROL SOFTWARE</div>
+          <h3 id="gcsTitle">Dashboard</h3>
+          <p id="gcsDesc">
+            Live telemetry, mission tracking, map view, battery status,
+            motor outputs and real-time flight monitoring.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<section id="contact">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="contact-left reveal">
+        <div class="section-label" style="margin-bottom:28px;"><span class="sl-num">05</span><span class="sl-line"></span><span>REACH OUT</span></div>
+        <h2>Let's build this <em>together</em></h2>
+        <p>Whether you're a drone operator, a delivery company, an investor, or just someone who believes in this future — we want to hear from you.</p>
+        <div class="contact-channels">
+          <a href="mailto:team@airsent.tech" class="contact-channel">
+            <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div class="ch-info"><span class="ch-label">Email Us</span><span class="ch-value">team@airsent.tech</span></div>
+            <svg class="ch-arrow" width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="contact-right reveal">
+        <div class="contact-form-wrap">
+          <form id="contactForm">
+            <input type="hidden" name="access_key" value="64bfa339-b843-4b42-ada8-73f7862f8f95">
+            <input type="hidden" name="subject" value="New Airsent website inquiry">
+            <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off">
+            <div class="form-header">
+              <div class="form-header-label"><span class="blink-dot" style="width:5px;height:5px;"></span>INITIATE CONTACT</div>
+              <h3>Send us a message</h3>
+            </div>
+            <div class="form-grid">
+              <div class="form-field"><label for="fname">First Name</label><input type="text" id="fname" name="first_name" placeholder="Jane"/></div>
+              <div class="form-field"><label for="lname">Last Name</label><input type="text" id="lname" name="last_name" placeholder="Smith"/></div>
+              <div class="form-field full"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="jane@company.com" required/></div>
+              <div class="form-field full"><label for="interest">I'm interested in</label>
+                <select id="interest" name="interest"><option value="" disabled selected>Select your interest</option><option>Drone Operator / Integration</option><option>Investment</option><option>Partnership</option><option>Media / Press</option><option>General Inquiry</option></select>
+              </div>
+              <div class="form-field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us about yourself or your use case..." required></textarea></div>
+            </div>
+            <div class="form-submit">
+              <span class="form-note">Replies via <span>team@airsent.tech</span></span>
+              <button class="btn-submit" type="submit">SEND <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+            </div>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="success-title">MESSAGE SENT</div>
+            <div class="success-msg">Thanks for reaching out. We'll be in touch at team@airsent.tech.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><span class="footer-name">AIRSENT</span><span class="footer-tag"></span></div>
+    <div class="footer-center"><span class="footer-copy">© 2026 AIRSENT</span><a class="footer-email" href="mailto:team@airsent.tech">team@airsent.tech</a></div>
+    <div class="footer-right"><span class="footer-url">airsent.tech</span></div>
+  </div>
+  <div class="footer-line"></div>
+</footer>
+
+<script src="mainweb.js"></script>
+</body>
+</html>
